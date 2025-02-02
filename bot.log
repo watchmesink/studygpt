@@ -1081,3 +1081,27 @@ tell me more about it
 2025-02-02 15:58:11,458 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/getUpdates "HTTP/1.1 200 OK"
 2025-02-02 15:58:21,489 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/getUpdates "HTTP/1.1 200 OK"
 2025-02-02 15:58:31,518 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/getUpdates "HTTP/1.1 200 OK"
+2025-02-02 16:05:36,943 - src.bot - INFO - Initializing TelegramBot
+2025-02-02 16:05:37,052 - src.vector_store - INFO - Initializing VectorStore
+2025-02-02 16:05:37,058 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-02 16:05:37,129 - src.vector_store - INFO - VectorStore initialized successfully
+2025-02-02 16:05:37,129 - src.bot - INFO - TelegramBot initialized successfully
+2025-02-02 16:05:37,129 - src.bot - INFO - Starting the bot
+2025-02-02 16:05:37,144 - src.bot - INFO - Bot is running...
+2025-02-02 16:05:37,501 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/getMe "HTTP/1.1 200 OK"
+2025-02-02 16:05:37,529 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/deleteWebhook "HTTP/1.1 200 OK"
+2025-02-02 16:05:37,531 - telegram.ext.Application - INFO - Application started
+2025-02-02 16:05:37,866 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/getUpdates "HTTP/1.1 200 OK"
+2025-02-02 16:05:37,869 - src.bot - INFO - Received document from user 376940089
+2025-02-02 16:05:38,267 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/getFile "HTTP/1.1 200 OK"
+2025-02-02 16:05:38,329 - httpx - INFO - HTTP Request: GET https://api.telegram.org/file/bot8171084781%3AAAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/documents/file_4.docx "HTTP/1.1 200 OK"
+2025-02-02 16:05:38,500 - src.bot - INFO - Downloaded document for user 376940089 to uploads/376940089/efbfbbb3-f752-472b-86dc-9a9474f9d98b.docx
+2025-02-02 16:05:38,588 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/sendMessage "HTTP/1.1 200 OK"
+2025-02-02 16:05:38,589 - src.document_processor - INFO - Processing document: uploads/376940089/efbfbbb3-f752-472b-86dc-9a9474f9d98b.docx
+2025-02-02 16:05:38,638 - src.document_processor - INFO - Successfully processed document into 42 chunks
+2025-02-02 16:05:38,638 - src.bot - INFO - Processed document into 42 chunks
+2025-02-02 16:05:38,638 - src.vector_store - INFO - Adding 42 chunks for user 376940089, document efbfbbb3-f752-472b-86dc-9a9474f9d98b
+2025-02-02 16:05:38,922 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-02 16:05:39,431 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-02 16:05:39,814 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-02 16:05:40,139 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"

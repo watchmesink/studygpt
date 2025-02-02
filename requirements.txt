@@ -8,4 +8,5 @@ python-dotenv==1.0.0
 tiktoken==0.5.2
 python-docx==0.8.11
 docx2txt==0.8
-tqdm==4.66.1 
+tqdm==4.66.1
+gunicorn==21.2.0 

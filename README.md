@@ -30,8 +30,40 @@ A Telegram bot that processes PDF and Word documents (DOC/DOCX) and answers ques
 ## Setup
 
 1. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
 2. Create a `.env` file with your API keys:
+```env
+TELEGRAM_TOKEN=your_telegram_bot_token
+OPENAI_API_KEY=your_openai_api_key
+```
+
 3. Run the bot:
+```bash
+python main.py
+```
+
+## Deployment to Railway
+
+1. Fork this repository
+
+2. Create a new Railway project:
+   - Go to [Railway](https://railway.app/)
+   - Click "New Project"
+   - Select "Deploy from GitHub repo"
+   - Choose your forked repository
+
+3. Add environment variables in Railway:
+   - TELEGRAM_TOKEN
+   - OPENAI_API_KEY
+
+4. Deploy:
+   - Railway will automatically deploy your bot
+   - Monitor the deployment logs in Railway dashboard
+
+Note: Railway provides persistent storage, so your ChromaDB data and uploaded files will be preserved between deployments.
 
 ## Usage
 
