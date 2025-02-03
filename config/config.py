@@ -14,29 +14,50 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-# Debug: Print all environment variables
-logger.info("Available environment variables:")
-for key in sorted(os.environ.keys()):
-    if 'TOKEN' in key or 'KEY' in key or 'SECRET' in key:
-        logger.info(f"{key}=<hidden>")
-    else:
-        logger.info(f"{key}={os.environ.get(key)}")
+def get_telegram_token():
+    """Get Telegram token with detailed logging."""
+    # Try different methods to get the token
+    token_from_environ = dict(os.environ).get('TELEGRAM_BOT_TOKEN')
+    token_from_getenv = os.getenv('TELEGRAM_BOT_TOKEN')
+    
+    logger.info("=== Telegram Token Debug ===")
+    logger.info(f"Token exists in os.environ: {'TELEGRAM_BOT_TOKEN' in os.environ}")
+    logger.info(f"Token exists in os.environ.get(): {token_from_environ is not None}")
+    logger.info(f"Token exists in os.getenv(): {token_from_getenv is not None}")
+    logger.info("===========================")
+    
+    return token_from_environ or token_from_getenv
 
 class Config:
     # Get Railway service variables
     RAILWAY_ENVIRONMENT_NAME = os.getenv('RAILWAY_ENVIRONMENT_NAME', 'development')
     RAILWAY_SERVICE_NAME = os.getenv('RAILWAY_SERVICE_NAME', 'local')
     
+    # Debug: Print all environment variables at class level
+    logger.info("=== Environment Variables ===")
+    for key in sorted(os.environ.keys()):
+        value = os.environ[key]
+        if any(s in key.lower() for s in ['token', 'key', 'secret', 'password']):
+            logger.info(f"{key}=<hidden>")
+        else:
+            logger.info(f"{key}={value}")
+    logger.info("===========================")
+    
     # Bot Configuration
-    TELEGRAM_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')  # Remove the 'image.png' prefix
+    TELEGRAM_TOKEN = get_telegram_token()
     if not TELEGRAM_TOKEN:
+        logger.error("Failed to get TELEGRAM_BOT_TOKEN")
+        logger.error(f"Current environment: {RAILWAY_ENVIRONMENT_NAME}")
+        logger.error(f"Current service: {RAILWAY_SERVICE_NAME}")
         raise ValueError(
             "TELEGRAM_BOT_TOKEN not found in environment variables. "
             "Please set it in Railway's environment variables."
         )
+    else:
+        logger.info("Successfully loaded TELEGRAM_BOT_TOKEN")
 
     # OpenAI Configuration
-    OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')  # Using get directly from environ
+    OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
     if not OPENAI_API_KEY:
         raise ValueError(
             "OPENAI_API_KEY not found in environment variables. "
@@ -61,7 +82,10 @@ class Config:
         logger.info("=== Current Configuration ===")
         logger.info(f"Environment: {cls.RAILWAY_ENVIRONMENT_NAME}")
         logger.info(f"Service: {cls.RAILWAY_SERVICE_NAME}")
-        logger.info(f"TELEGRAM_TOKEN: {'<set>' if cls.TELEGRAM_TOKEN else '<missing>'}")
-        logger.info(f"OPENAI_API_KEY: {'<set>' if cls.OPENAI_API_KEY else '<missing>'}")
+        logger.info(f"TELEGRAM_TOKEN exists: {bool(cls.TELEGRAM_TOKEN)}")
+        logger.info(f"OPENAI_API_KEY exists: {bool(cls.OPENAI_API_KEY)}")
         logger.info(f"UPLOAD_DIR: {cls.UPLOAD_DIR}")
-        logger.info("=========================") 
+        logger.info("=========================")
+
+# Validate configuration on module load
+Config.validate() 
