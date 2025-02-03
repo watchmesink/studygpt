@@ -28,7 +28,7 @@ class Config:
     RAILWAY_SERVICE_NAME = os.getenv('RAILWAY_SERVICE_NAME', 'local')
     
     # Bot Configuration
-    TELEGRAM_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')  # Using get directly from environ
+    TELEGRAM_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')  # Remove the 'image.png' prefix
     if not TELEGRAM_TOKEN:
         raise ValueError(
             "TELEGRAM_BOT_TOKEN not found in environment variables. "
