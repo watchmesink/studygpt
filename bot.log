@@ -1588,3 +1588,179 @@ tell me more about it
 2025-02-03 10:38:01,150 - telegram.ext.Application - INFO - Application started
 2025-02-03 10:56:16,928 - config.config - ERROR - No Telegram token found in environment variables
 2025-02-03 10:56:16,928 - config.config - ERROR - Available environment variables: MallocNanoZone, USER, COMMAND_MODE, __CFBundleIdentifier, PATH, LOGNAME, SSH_AUTH_SOCK, HOME, SHELL, TMPDIR, __CF_USER_TEXT_ENCODING, XPC_SERVICE_NAME, XPC_FLAGS, ORIGINAL_XDG_CURRENT_DESKTOP, CURSOR_TRACE_ID, SHLVL, PWD, OLDPWD, HOMEBREW_PREFIX, HOMEBREW_CELLAR, HOMEBREW_REPOSITORY, INFOPATH, PYTHONSTARTUP, TERM_PROGRAM, TERM_PROGRAM_VERSION, LANG, COLORTERM, GIT_ASKPASS, VSCODE_GIT_ASKPASS_NODE, VSCODE_GIT_ASKPASS_EXTRA_ARGS, VSCODE_GIT_ASKPASS_MAIN, VSCODE_GIT_IPC_HANDLE, VSCODE_INJECTION, ZDOTDIR, USER_ZDOTDIR, TERM, _, TELEGRAM_TOKEN, OPENAI_API_KEY
+2025-02-03 11:34:44,722 - config.config - INFO - === Environment Variables ===
+2025-02-03 11:35:21,987 - config.config - INFO - === Environment Variables ===
+2025-02-03 11:35:49,998 - config.config - INFO - === Environment Variables ===
+2025-02-03 11:35:49,998 - config.config - INFO - COLORTERM=truecolor
+2025-02-03 11:35:49,998 - config.config - INFO - COMMAND_MODE=unix2003
+2025-02-03 11:35:49,998 - config.config - INFO - CURSOR_TRACE_ID=9e9ba2095ec241c7947027ecc701eb91
+2025-02-03 11:35:49,998 - config.config - INFO - GIT_ASKPASS=/Applications/Cursor.app/Contents/Resources/app/extensions/git/dist/askpass.sh
+2025-02-03 11:35:49,998 - config.config - INFO - HOME=/Users/Gleb.Melnikov
+2025-02-03 11:35:49,998 - config.config - INFO - HOMEBREW_CELLAR=/opt/homebrew/Cellar
+2025-02-03 11:35:49,998 - config.config - INFO - HOMEBREW_PREFIX=/opt/homebrew
+2025-02-03 11:35:49,998 - config.config - INFO - HOMEBREW_REPOSITORY=/opt/homebrew
+2025-02-03 11:35:49,998 - config.config - INFO - INFOPATH=/opt/homebrew/share/info:/opt/homebrew/share/info:
+2025-02-03 11:35:49,998 - config.config - INFO - LANG=en_US.UTF-8
+2025-02-03 11:35:49,998 - config.config - INFO - LOGNAME=Gleb.Melnikov
+2025-02-03 11:35:49,998 - config.config - INFO - MallocNanoZone=0
+2025-02-03 11:35:49,998 - config.config - INFO - OLDPWD=/Users/Gleb.Melnikov/Projects/studygpt_bot
+2025-02-03 11:35:49,998 - config.config - INFO - ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+2025-02-03 11:35:49,998 - config.config - INFO - PATH=/usr/local/bin:/Users/Gleb.Melnikov/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/Users/Gleb.Melnikov/bin:/Users/Gleb.Melnikov/Library/Application Support/JetBrains/Toolbox/scripts
+2025-02-03 11:35:49,998 - config.config - INFO - PWD=/Users/Gleb.Melnikov/Projects/studygpt_bot
+2025-02-03 11:35:49,998 - config.config - INFO - PYTHONSTARTUP=/Users/Gleb.Melnikov/.cursor/extensions/ms-python.python-2024.12.3-darwin-arm64/python_files/pythonrc.py
+2025-02-03 11:35:49,998 - config.config - INFO - SHELL=/bin/zsh
+2025-02-03 11:35:49,998 - config.config - INFO - SHLVL=1
+2025-02-03 11:35:49,998 - config.config - INFO - SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.6XdhkbGrkN/Listeners
+2025-02-03 11:35:49,998 - config.config - INFO - TERM=xterm-256color
+2025-02-03 11:35:49,999 - config.config - INFO - TERM_PROGRAM=vscode
+2025-02-03 11:35:49,999 - config.config - INFO - TERM_PROGRAM_VERSION=0.45.7
+2025-02-03 11:35:49,999 - config.config - INFO - TMPDIR=/var/folders/dk/g_69cy1j4q71fvp73l_f2s940000gp/T/
+2025-02-03 11:35:49,999 - config.config - INFO - USER=Gleb.Melnikov
+2025-02-03 11:35:49,999 - config.config - INFO - USER_ZDOTDIR=/Users/Gleb.Melnikov
+2025-02-03 11:35:49,999 - config.config - INFO - VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+2025-02-03 11:35:49,999 - config.config - INFO - VSCODE_GIT_ASKPASS_MAIN=/Applications/Cursor.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
+2025-02-03 11:35:49,999 - config.config - INFO - VSCODE_GIT_ASKPASS_NODE=/Applications/Cursor.app/Contents/Frameworks/Cursor Helper (Plugin).app/Contents/MacOS/Cursor Helper (Plugin)
+2025-02-03 11:35:49,999 - config.config - INFO - VSCODE_GIT_IPC_HANDLE=/var/folders/dk/g_69cy1j4q71fvp73l_f2s940000gp/T/vscode-git-f7849f1b45.sock
+2025-02-03 11:35:49,999 - config.config - INFO - VSCODE_INJECTION=1
+2025-02-03 11:35:49,999 - config.config - INFO - XPC_FLAGS=0x0
+2025-02-03 11:35:49,999 - config.config - INFO - XPC_SERVICE_NAME=0
+2025-02-03 11:35:49,999 - config.config - INFO - ZDOTDIR=/Users/Gleb.Melnikov
+2025-02-03 11:35:49,999 - config.config - INFO - _=/opt/homebrew/bin/python3
+2025-02-03 11:35:49,999 - config.config - INFO - __CFBundleIdentifier=com.todesktop.230313mzl4w4u92
+2025-02-03 11:35:49,999 - config.config - INFO - __CF_USER_TEXT_ENCODING=0x1F6:0x0:0x2
+2025-02-03 11:35:49,999 - config.config - INFO - ===========================
+2025-02-03 11:35:49,999 - config.config - INFO - === Telegram Token Debug ===
+2025-02-03 11:35:49,999 - config.config - INFO - Token exists in os.environ: False
+2025-02-03 11:35:49,999 - config.config - INFO - Token exists in os.environ.get(): False
+2025-02-03 11:35:49,999 - config.config - INFO - Token exists in os.getenv(): False
+2025-02-03 11:35:49,999 - config.config - INFO - ===========================
+2025-02-03 11:35:49,999 - config.config - ERROR - Failed to get TELEGRAM_BOT_TOKEN
+2025-02-03 11:35:49,999 - config.config - ERROR - Current environment: development
+2025-02-03 11:35:49,999 - config.config - ERROR - Current service: local
+2025-02-03 11:36:45,167 - config.config - INFO - Looking for .env file at: /Users/Gleb.Melnikov/Projects/studygpt_bot/.env
+2025-02-03 11:36:45,167 - config.config - INFO - Loading environment variables from /Users/Gleb.Melnikov/Projects/studygpt_bot/.env
+2025-02-03 11:36:45,168 - config.config - INFO - === Environment Variables ===
+2025-02-03 11:36:45,168 - config.config - INFO - COLORTERM=truecolor
+2025-02-03 11:36:45,168 - config.config - INFO - COMMAND_MODE=unix2003
+2025-02-03 11:36:45,168 - config.config - INFO - CURSOR_TRACE_ID=9e9ba2095ec241c7947027ecc701eb91
+2025-02-03 11:36:45,168 - config.config - INFO - GIT_ASKPASS=/Applications/Cursor.app/Contents/Resources/app/extensions/git/dist/askpass.sh
+2025-02-03 11:36:45,168 - config.config - INFO - HOME=/Users/Gleb.Melnikov
+2025-02-03 11:36:45,168 - config.config - INFO - HOMEBREW_CELLAR=/opt/homebrew/Cellar
+2025-02-03 11:36:45,168 - config.config - INFO - HOMEBREW_PREFIX=/opt/homebrew
+2025-02-03 11:36:45,168 - config.config - INFO - HOMEBREW_REPOSITORY=/opt/homebrew
+2025-02-03 11:36:45,168 - config.config - INFO - INFOPATH=/opt/homebrew/share/info:/opt/homebrew/share/info:
+2025-02-03 11:36:45,168 - config.config - INFO - LANG=en_US.UTF-8
+2025-02-03 11:36:45,168 - config.config - INFO - LOGNAME=Gleb.Melnikov
+2025-02-03 11:36:45,168 - config.config - INFO - MallocNanoZone=0
+2025-02-03 11:36:45,168 - config.config - INFO - OLDPWD=/Users/Gleb.Melnikov/Projects/studygpt_bot
+2025-02-03 11:36:45,168 - config.config - INFO - OPENAI_API_KEY=<hidden>
+2025-02-03 11:36:45,168 - config.config - INFO - ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+2025-02-03 11:36:45,168 - config.config - INFO - PATH=/usr/local/bin:/Users/Gleb.Melnikov/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/Users/Gleb.Melnikov/bin:/Users/Gleb.Melnikov/Library/Application Support/JetBrains/Toolbox/scripts
+2025-02-03 11:36:45,168 - config.config - INFO - PWD=/Users/Gleb.Melnikov/Projects/studygpt_bot
+2025-02-03 11:36:45,168 - config.config - INFO - PYTHONSTARTUP=/Users/Gleb.Melnikov/.cursor/extensions/ms-python.python-2024.12.3-darwin-arm64/python_files/pythonrc.py
+2025-02-03 11:36:45,168 - config.config - INFO - SHELL=/bin/zsh
+2025-02-03 11:36:45,168 - config.config - INFO - SHLVL=1
+2025-02-03 11:36:45,168 - config.config - INFO - SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.6XdhkbGrkN/Listeners
+2025-02-03 11:36:45,168 - config.config - INFO - TELEGRAM_TOKEN=<hidden>
+2025-02-03 11:36:45,168 - config.config - INFO - TERM=xterm-256color
+2025-02-03 11:36:45,168 - config.config - INFO - TERM_PROGRAM=vscode
+2025-02-03 11:36:45,168 - config.config - INFO - TERM_PROGRAM_VERSION=0.45.7
+2025-02-03 11:36:45,168 - config.config - INFO - TMPDIR=/var/folders/dk/g_69cy1j4q71fvp73l_f2s940000gp/T/
+2025-02-03 11:36:45,168 - config.config - INFO - USER=Gleb.Melnikov
+2025-02-03 11:36:45,168 - config.config - INFO - USER_ZDOTDIR=/Users/Gleb.Melnikov
+2025-02-03 11:36:45,168 - config.config - INFO - VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+2025-02-03 11:36:45,168 - config.config - INFO - VSCODE_GIT_ASKPASS_MAIN=/Applications/Cursor.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
+2025-02-03 11:36:45,168 - config.config - INFO - VSCODE_GIT_ASKPASS_NODE=/Applications/Cursor.app/Contents/Frameworks/Cursor Helper (Plugin).app/Contents/MacOS/Cursor Helper (Plugin)
+2025-02-03 11:36:45,168 - config.config - INFO - VSCODE_GIT_IPC_HANDLE=/var/folders/dk/g_69cy1j4q71fvp73l_f2s940000gp/T/vscode-git-f7849f1b45.sock
+2025-02-03 11:36:45,168 - config.config - INFO - VSCODE_INJECTION=1
+2025-02-03 11:36:45,168 - config.config - INFO - XPC_FLAGS=0x0
+2025-02-03 11:36:45,168 - config.config - INFO - XPC_SERVICE_NAME=0
+2025-02-03 11:36:45,168 - config.config - INFO - ZDOTDIR=/Users/Gleb.Melnikov
+2025-02-03 11:36:45,168 - config.config - INFO - _=/opt/homebrew/bin/python3
+2025-02-03 11:36:45,168 - config.config - INFO - __CFBundleIdentifier=com.todesktop.230313mzl4w4u92
+2025-02-03 11:36:45,169 - config.config - INFO - __CF_USER_TEXT_ENCODING=0x1F6:0x0:0x2
+2025-02-03 11:36:45,169 - config.config - INFO - ===========================
+2025-02-03 11:36:45,169 - config.config - INFO - === Telegram Token Debug ===
+2025-02-03 11:36:45,169 - config.config - INFO - Token exists in os.environ: False
+2025-02-03 11:36:45,169 - config.config - INFO - Token exists: False
+2025-02-03 11:36:45,169 - config.config - INFO - .env file exists: True
+2025-02-03 11:36:45,169 - config.config - INFO - ===========================
+2025-02-03 11:36:45,169 - config.config - ERROR - Failed to get TELEGRAM_BOT_TOKEN
+2025-02-03 11:36:45,169 - config.config - ERROR - Current environment: development
+2025-02-03 11:36:45,169 - config.config - ERROR - Current service: local
+2025-02-03 11:37:50,073 - config.config - INFO - Looking for .env file at: /Users/Gleb.Melnikov/Projects/studygpt_bot/.env
+2025-02-03 11:37:50,073 - config.config - INFO - Loading environment variables from /Users/Gleb.Melnikov/Projects/studygpt_bot/.env
+2025-02-03 11:37:50,073 - config.config - INFO - === Environment Variables ===
+2025-02-03 11:37:50,073 - config.config - INFO - COLORTERM=truecolor
+2025-02-03 11:37:50,074 - config.config - INFO - COMMAND_MODE=unix2003
+2025-02-03 11:37:50,074 - config.config - INFO - CURSOR_TRACE_ID=9e9ba2095ec241c7947027ecc701eb91
+2025-02-03 11:37:50,074 - config.config - INFO - GIT_ASKPASS=/Applications/Cursor.app/Contents/Resources/app/extensions/git/dist/askpass.sh
+2025-02-03 11:37:50,074 - config.config - INFO - HOME=/Users/Gleb.Melnikov
+2025-02-03 11:37:50,074 - config.config - INFO - HOMEBREW_CELLAR=/opt/homebrew/Cellar
+2025-02-03 11:37:50,074 - config.config - INFO - HOMEBREW_PREFIX=/opt/homebrew
+2025-02-03 11:37:50,074 - config.config - INFO - HOMEBREW_REPOSITORY=/opt/homebrew
+2025-02-03 11:37:50,074 - config.config - INFO - INFOPATH=/opt/homebrew/share/info:/opt/homebrew/share/info:
+2025-02-03 11:37:50,074 - config.config - INFO - LANG=en_US.UTF-8
+2025-02-03 11:37:50,074 - config.config - INFO - LOGNAME=Gleb.Melnikov
+2025-02-03 11:37:50,074 - config.config - INFO - MallocNanoZone=0
+2025-02-03 11:37:50,074 - config.config - INFO - OLDPWD=/Users/Gleb.Melnikov/Projects/studygpt_bot
+2025-02-03 11:37:50,074 - config.config - INFO - OPENAI_API_KEY=<hidden>
+2025-02-03 11:37:50,074 - config.config - INFO - ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+2025-02-03 11:37:50,074 - config.config - INFO - PATH=/usr/local/bin:/Users/Gleb.Melnikov/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/Users/Gleb.Melnikov/bin:/Users/Gleb.Melnikov/Library/Application Support/JetBrains/Toolbox/scripts
+2025-02-03 11:37:50,074 - config.config - INFO - PWD=/Users/Gleb.Melnikov/Projects/studygpt_bot
+2025-02-03 11:37:50,074 - config.config - INFO - PYTHONSTARTUP=/Users/Gleb.Melnikov/.cursor/extensions/ms-python.python-2024.12.3-darwin-arm64/python_files/pythonrc.py
+2025-02-03 11:37:50,074 - config.config - INFO - SHELL=/bin/zsh
+2025-02-03 11:37:50,074 - config.config - INFO - SHLVL=1
+2025-02-03 11:37:50,074 - config.config - INFO - SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.6XdhkbGrkN/Listeners
+2025-02-03 11:37:50,074 - config.config - INFO - TELEGRAM_TOKEN=<hidden>
+2025-02-03 11:37:50,074 - config.config - INFO - TERM=xterm-256color
+2025-02-03 11:37:50,074 - config.config - INFO - TERM_PROGRAM=vscode
+2025-02-03 11:37:50,074 - config.config - INFO - TERM_PROGRAM_VERSION=0.45.7
+2025-02-03 11:37:50,074 - config.config - INFO - TMPDIR=/var/folders/dk/g_69cy1j4q71fvp73l_f2s940000gp/T/
+2025-02-03 11:37:50,074 - config.config - INFO - USER=Gleb.Melnikov
+2025-02-03 11:37:50,074 - config.config - INFO - USER_ZDOTDIR=/Users/Gleb.Melnikov
+2025-02-03 11:37:50,074 - config.config - INFO - VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+2025-02-03 11:37:50,074 - config.config - INFO - VSCODE_GIT_ASKPASS_MAIN=/Applications/Cursor.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
+2025-02-03 11:37:50,074 - config.config - INFO - VSCODE_GIT_ASKPASS_NODE=/Applications/Cursor.app/Contents/Frameworks/Cursor Helper (Plugin).app/Contents/MacOS/Cursor Helper (Plugin)
+2025-02-03 11:37:50,074 - config.config - INFO - VSCODE_GIT_IPC_HANDLE=/var/folders/dk/g_69cy1j4q71fvp73l_f2s940000gp/T/vscode-git-f7849f1b45.sock
+2025-02-03 11:37:50,074 - config.config - INFO - VSCODE_INJECTION=1
+2025-02-03 11:37:50,074 - config.config - INFO - XPC_FLAGS=0x0
+2025-02-03 11:37:50,074 - config.config - INFO - XPC_SERVICE_NAME=0
+2025-02-03 11:37:50,074 - config.config - INFO - ZDOTDIR=/Users/Gleb.Melnikov
+2025-02-03 11:37:50,074 - config.config - INFO - _=/opt/homebrew/bin/python3
+2025-02-03 11:37:50,074 - config.config - INFO - __CFBundleIdentifier=com.todesktop.230313mzl4w4u92
+2025-02-03 11:37:50,074 - config.config - INFO - __CF_USER_TEXT_ENCODING=0x1F6:0x0:0x2
+2025-02-03 11:37:50,074 - config.config - INFO - ===========================
+2025-02-03 11:37:50,074 - config.config - INFO - === Telegram Token Debug ===
+2025-02-03 11:37:50,074 - config.config - INFO - TELEGRAM_BOT_TOKEN exists: False
+2025-02-03 11:37:50,074 - config.config - INFO - TELEGRAM_TOKEN exists: True
+2025-02-03 11:37:50,074 - config.config - INFO - Final token exists: True
+2025-02-03 11:37:50,074 - config.config - INFO - .env file exists: True
+2025-02-03 11:37:50,074 - config.config - INFO - ===========================
+2025-02-03 11:37:50,074 - config.config - INFO - Successfully loaded Telegram token
+2025-02-03 11:37:50,074 - config.config - INFO - === Current Configuration ===
+2025-02-03 11:37:50,074 - config.config - INFO - Environment: development
+2025-02-03 11:37:50,074 - config.config - INFO - Service: local
+2025-02-03 11:37:50,074 - config.config - INFO - TELEGRAM_TOKEN exists: True
+2025-02-03 11:37:50,074 - config.config - INFO - OPENAI_API_KEY exists: True
+2025-02-03 11:37:50,074 - config.config - INFO - UPLOAD_DIR: uploads
+2025-02-03 11:37:50,074 - config.config - INFO - =========================
+2025-02-03 11:37:50,744 - src.bot - INFO - Initializing TelegramBot
+2025-02-03 11:37:50,867 - src.vector_store - INFO - Initializing VectorStore
+2025-02-03 11:37:50,881 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-03 11:37:50,969 - src.vector_store - INFO - VectorStore initialized successfully
+2025-02-03 11:37:50,970 - src.bot - INFO - TelegramBot initialized successfully
+2025-02-03 11:37:50,970 - src.bot - INFO - Starting the bot
+2025-02-03 11:37:50,985 - src.bot - INFO - Bot is running...
+2025-02-03 11:37:51,336 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/getMe "HTTP/1.1 200 OK"
+2025-02-03 11:37:51,363 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/deleteWebhook "HTTP/1.1 200 OK"
+2025-02-03 11:37:51,365 - telegram.ext.Application - INFO - Application started
+2025-02-03 11:37:51,702 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/getUpdates "HTTP/1.1 200 OK"
+2025-02-03 11:37:51,706 - src.bot - INFO - Start command received from user 210774542
+2025-02-03 11:37:51,794 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/sendMessage "HTTP/1.1 200 OK"
+2025-02-03 11:37:51,795 - src.bot - INFO - Start command received from user 210774542
+2025-02-03 11:37:51,842 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/sendMessage "HTTP/1.1 200 OK"
+2025-02-03 11:37:51,842 - src.bot - INFO - Start command received from user 210774542
+2025-02-03 11:37:51,924 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/sendMessage "HTTP/1.1 200 OK"
+2025-02-03 11:37:51,925 - src.bot - INFO - Start command received from user 210774542
+2025-02-03 11:37:51,972 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/sendMessage "HTTP/1.1 200 OK"
