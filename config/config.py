@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 from dotenv import load_dotenv
 import logging
+from .secrets import get_secret
 
 # Configure logging first
 logging.basicConfig(
@@ -59,20 +60,24 @@ class Config:
     # Log environment variables
     log_environment_variables()
     
-    # Bot Configuration
-    TELEGRAM_TOKEN = get_telegram_token()
+    # Bot Configuration - try multiple methods
+    TELEGRAM_TOKEN = (
+        get_secret('TELEGRAM_BOT_TOKEN') or 
+        get_secret('TELEGRAM_TOKEN') or
+        get_secret('BOT_TOKEN')
+    )
+    
     if not TELEGRAM_TOKEN:
-        logger.error("Failed to get Telegram token")
-        logger.error("Tried both TELEGRAM_BOT_TOKEN and TELEGRAM_TOKEN variables")
-        logger.error(f"Current environment: {RAILWAY_ENVIRONMENT_NAME}")
-        logger.error(f"Current service: {RAILWAY_SERVICE_NAME}")
+        available_vars = [
+            key for key in os.environ.keys()
+            if 'TOKEN' in key or 'KEY' in key
+        ]
+        logger.error(f"Available environment variables with TOKEN/KEY: {available_vars}")
         raise ValueError(
-            "No Telegram token found in environment variables. "
-            "Please set either TELEGRAM_BOT_TOKEN or TELEGRAM_TOKEN."
+            "No Telegram token found in any configuration source. "
+            "Please set TELEGRAM_TOKEN or TELEGRAM_BOT_TOKEN in environment variables or config files."
         )
-    else:
-        logger.info("Successfully loaded Telegram token")
-
+    
     # OpenAI Configuration
     OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
     if not OPENAI_API_KEY:
