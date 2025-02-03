@@ -81,6 +81,10 @@ class TelegramBot:
             "1. Send me PDF or Word documents (DOC/DOCX)\n"
             "2. Select a document to chat about\n"
             "3. Ask questions about the selected document\n\n"
+            "Available commands:\n"
+            "/list - Show your documents\n"
+            "/finish - End chat session\n"
+            "/help - Show all commands\n\n"
             "Try sending a document to get started!"
         )
         await update.message.reply_text(welcome_message)
@@ -89,7 +93,7 @@ class TelegramBot:
         documents = self.vector_store.get_user_documents(user_id)
         if documents:
             await update.message.reply_text(
-                "Here are your existing documents:",
+                "Your available documents:",
                 reply_markup=self.create_document_keyboard(documents)
             )
     
@@ -98,8 +102,12 @@ class TelegramBot:
         user_id = str(update.effective_user.id)
         documents = self.vector_store.get_user_documents(user_id)
         
+        if not documents:
+            await update.message.reply_text("No documents uploaded yet.")
+            return
+        
         await update.message.reply_text(
-            self.format_document_list(documents),
+            "Select a document to chat about:",
             reply_markup=self.create_document_keyboard(documents)
         )
     
@@ -215,7 +223,7 @@ class TelegramBot:
             if not session.in_chat or not session.active_document_id:
                 documents = self.vector_store.get_user_documents(user_id)
                 await update.message.reply_text(
-                    "Please select a document to chat about first:",
+                    "Please select a document to chat about:",
                     reply_markup=self.create_document_keyboard(documents)
                 )
                 return
@@ -228,12 +236,18 @@ class TelegramBot:
             query = update.message.text
             logger.info(f"Received query from user {user_id}: {query}")
             
+            # Send "thinking" message
+            thinking_message = await update.message.reply_text(
+                "🤔 Generating response..."
+            )
+            
             # Get relevant chunks from vector store for the active document
             context_chunks = self.vector_store.query(
                 query, user_id, session.active_document_id
             )
             
             if not context_chunks:
+                await thinking_message.delete()
                 logger.warning(f"No relevant chunks found for user {user_id}")
                 await update.message.reply_text(
                     "❌ No relevant information found in the selected document."
@@ -244,7 +258,8 @@ class TelegramBot:
             logger.info("Generating response with GPT")
             response = self.query_engine.generate_response(query, context_chunks)
             
-            # Send response
+            # Delete thinking message and send response
+            await thinking_message.delete()
             await update.message.reply_text(
                 response,
                 parse_mode='Markdown'
@@ -253,10 +268,34 @@ class TelegramBot:
             
         except Exception as e:
             logger.error(f"Error processing query for user {user_id}: {str(e)}")
+            # Try to delete thinking message if it exists
+            try:
+                await thinking_message.delete()
+            except:
+                pass
             await update.message.reply_text(
                 f"❌ Error processing query: {str(e)}"
             )
     
+    async def help(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Show available commands."""
+        help_text = (
+            "Available commands:\n\n"
+            "/start - Start the bot\n"
+            "/list - Show your documents\n"
+            "/finish - End current chat session\n"
+            "/help - Show this help message\n\n"
+            "You can also:\n"
+            "• Send PDF or DOC/DOCX files to process\n"
+            "• Use buttons to select documents\n"
+            "• Ask questions about selected document"
+        )
+        await update.message.reply_text(help_text)
+
+    async def finish_chat_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Command version of finish chat."""
+        await self.finish_chat(update, context)
+
     def run(self):
         """Run the bot."""
         logger.info("Starting the bot")
@@ -264,7 +303,9 @@ class TelegramBot:
         
         # Add handlers
         app.add_handler(CommandHandler("start", self.start))
-        app.add_handler(CommandHandler("list_documents", self.list_documents))
+        app.add_handler(CommandHandler("help", self.help))
+        app.add_handler(CommandHandler("list", self.list_documents))  # Shorter alias for list_documents
+        app.add_handler(CommandHandler("finish", self.finish_chat_command))
         app.add_handler(CallbackQueryHandler(self.handle_document_selection))
         app.add_handler(MessageHandler(filters.Document.ALL, self.handle_document))
         app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, self.handle_query))

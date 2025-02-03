@@ -17,7 +17,7 @@ class QueryEngine:
                 "role": "system",
                 "content": "You are a helpful assistant that answers questions based on the provided context. "
                           "Always format your responses in Markdown. "
-                          "If you cannot answer the question based on the context, say so."
+                          "If you cannot answer the question based on the context, say so and use general knowledge to answer the question. "
             },
             {
                 "role": "user",

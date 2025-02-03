@@ -71,10 +71,18 @@ class VectorStore:
             logger.info(f"Querying vector store for user {user_id}, document {document_id}")
             query_embedding = self.get_embedding(query)
             
+            # Fix the where clause format
+            where_clause = {
+                "$and": [
+                    {"user_id": {"$eq": user_id}},
+                    {"document_id": {"$eq": document_id}}
+                ]
+            }
+            
             results = self.collection.query(
                 query_embeddings=[query_embedding],
                 n_results=n_results,
-                where={"user_id": user_id, "document_id": document_id}
+                where=where_clause
             )
             
             logger.info(f"Found {len(results['documents'][0])} relevant chunks")
