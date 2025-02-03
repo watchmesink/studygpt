@@ -19,14 +19,32 @@ logging.basicConfig(
 )
 
 class Config:
-    # Try to get token from Railway environment first, then fall back to .env
-    TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN") or os.getenv("TELEGRAM_TOKEN")
+    @classmethod
+    def get_telegram_token(cls):
+        """Get Telegram token with fallback logic."""
+        token = os.getenv("TELEGRAM_BOT_TOKEN") or os.getenv("TELEGRAM_TOKEN")
+        logger.info(f"Using {'Railway' if os.getenv('TELEGRAM_BOT_TOKEN') else 'local'} Telegram token")
+        return token
+
+    @classmethod
+    def get_openai_key(cls):
+        """Get OpenAI API key."""
+        key = os.getenv("OPENAI_API_KEY")
+        logger.info("OpenAI API key is" + (" not" if not key else "") + " configured")
+        return key
+
+    # Telegram Configuration
+    TELEGRAM_TOKEN = get_telegram_token()
     if not TELEGRAM_TOKEN:
-        raise ValueError("No Telegram token found in environment variables")
+        logger.error("No Telegram token found in environment variables")
+        logger.error("Available environment variables: " + ", ".join(os.environ.keys()))
+        raise ValueError("No Telegram token found. Set TELEGRAM_BOT_TOKEN or TELEGRAM_TOKEN")
     
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+    # OpenAI Configuration
+    OPENAI_API_KEY = get_openai_key()
     if not OPENAI_API_KEY:
-        raise ValueError("No OpenAI API key found in environment variables")
+        logger.error("No OpenAI API key found in environment variables")
+        raise ValueError("No OpenAI API key found. Set OPENAI_API_KEY")
     
     # Model configurations
     EMBEDDING_MODEL = "text-embedding-ada-002"
@@ -51,9 +69,11 @@ class Config:
         
         missing = [key for key, value in required_vars.items() if not value]
         if missing:
+            logger.error(f"Missing required configuration: {', '.join(missing)}")
             raise ValueError(f"Missing required configuration variables: {', '.join(missing)}")
         
         logger.info("Configuration validation successful")
+        logger.info(f"Upload directory: {cls.UPLOAD_DIR}")
 
     # Create upload directory if it doesn't exist
     os.makedirs(UPLOAD_DIR, exist_ok=True) 
