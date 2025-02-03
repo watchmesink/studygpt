@@ -1105,3 +1105,13 @@ tell me more about it
 2025-02-02 16:05:39,431 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
 2025-02-02 16:05:39,814 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
 2025-02-02 16:05:40,139 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-02-03 10:10:34,208 - src.bot - INFO - Initializing TelegramBot
+2025-02-03 10:10:34,317 - src.vector_store - INFO - Initializing VectorStore
+2025-02-03 10:10:34,330 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-02-03 10:10:34,409 - src.vector_store - INFO - VectorStore initialized successfully
+2025-02-03 10:10:34,409 - src.bot - INFO - TelegramBot initialized successfully
+2025-02-03 10:10:34,409 - src.bot - INFO - Starting the bot
+2025-02-03 10:10:34,424 - src.bot - INFO - Bot is running...
+2025-02-03 10:10:34,805 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/getMe "HTTP/1.1 200 OK"
+2025-02-03 10:10:34,837 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8171084781:AAHru5-mXPyepOXiIqUksoQf3x7DBfPNt8k/deleteWebhook "HTTP/1.1 200 OK"
+2025-02-03 10:10:34,838 - telegram.ext.Application - INFO - Application started
