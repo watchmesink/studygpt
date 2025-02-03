@@ -15,25 +15,44 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-# Load environment variables
-load_dotenv()
+# Debug: Print current working directory
+logger.info(f"Current working directory: {os.getcwd()}")
 
-# Get tokens directly
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-if not TELEGRAM_TOKEN:
-    logger.error("No Telegram token found in environment variables")
-    logger.error("Available environment variables: " + ", ".join(os.environ.keys()))
-    raise ValueError("TELEGRAM_BOT_TOKEN not found in environment")
+# Load .env file
+env_path = os.path.join(os.getcwd(), '.env')
+logger.info(f"Looking for .env file at: {env_path}")
+if os.path.exists(env_path):
+    logger.info(".env file found")
+    load_dotenv(env_path)
+else:
+    logger.warning(".env file not found")
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-if not OPENAI_API_KEY:
-    logger.error("No OpenAI API key found in environment variables")
-    raise ValueError("OPENAI_API_KEY not found in environment")
+# Debug: Print all environment variables (excluding sensitive values)
+logger.info("Environment variables:")
+for key in sorted(os.environ.keys()):
+    if 'TOKEN' in key or 'KEY' in key:
+        logger.info(f"{key}=<hidden>")
+    else:
+        logger.info(f"{key}={os.environ.get(key)}")
 
 class Config:
-    # Tokens
-    TELEGRAM_TOKEN = TELEGRAM_TOKEN
-    OPENAI_API_KEY = OPENAI_API_KEY
+    # Try to get token with fallback
+    TELEGRAM_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
+    if not TELEGRAM_TOKEN:
+        logger.error("TELEGRAM_BOT_TOKEN not found")
+        # Try fallback
+        TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
+        if TELEGRAM_TOKEN:
+            logger.info("Using fallback TELEGRAM_TOKEN")
+        else:
+            logger.error("No telegram token found in any variable")
+            raise ValueError("No telegram token found. Set TELEGRAM_BOT_TOKEN in environment")
+
+    # OpenAI Configuration
+    OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+    if not OPENAI_API_KEY:
+        logger.error("OPENAI_API_KEY not found")
+        raise ValueError("No OpenAI API key found. Set OPENAI_API_KEY in environment")
     
     # Model configurations
     EMBEDDING_MODEL = "text-embedding-ada-002"
@@ -45,14 +64,15 @@ class Config:
     
     # File storage
     UPLOAD_DIR = os.getenv("UPLOAD_DIR", "uploads")
-    
-    # Create upload directory
     os.makedirs(UPLOAD_DIR, exist_ok=True)
-    
+
     @classmethod
     def validate(cls):
-        """Validate all required configurations are present."""
-        logger.info("Validating configuration...")
-        logger.info(f"Using Telegram token: {cls.TELEGRAM_TOKEN[:10]}...")
-        logger.info(f"Using OpenAI key: {cls.OPENAI_API_KEY[:10]}...")
-        logger.info(f"Upload directory: {cls.UPLOAD_DIR}") 
+        """Print current configuration values (safely)"""
+        logger.info("=== Current Configuration ===")
+        logger.info(f"TELEGRAM_TOKEN: {'<set>' if cls.TELEGRAM_TOKEN else '<missing>'}")
+        logger.info(f"OPENAI_API_KEY: {'<set>' if cls.OPENAI_API_KEY else '<missing>'}")
+        logger.info(f"UPLOAD_DIR: {cls.UPLOAD_DIR}")
+        logger.info(f"EMBEDDING_MODEL: {cls.EMBEDDING_MODEL}")
+        logger.info(f"GPT_MODEL: {cls.GPT_MODEL}")
+        logger.info("=========================") 
