@@ -35,12 +35,12 @@ class Config:
     
     # Debug: Print all environment variables at class level
     logger.info("=== Environment Variables ===")
-    for key in sorted(os.environ.keys()):
-        value = os.environ[key]
-        if any(s in key.lower() for s in ['token', 'key', 'secret', 'password']):
-            logger.info(f"{key}=<hidden>")
+    for env_key in sorted(os.environ.keys()):
+        value = os.environ[env_key]
+        if any(s in env_key.lower() for s in ['token', 'key', 'secret', 'password']):
+            logger.info(f"{env_key}=<hidden>")
         else:
-            logger.info(f"{key}={value}")
+            logger.info(f"{env_key}={value}")
     logger.info("===========================")
     
     # Bot Configuration
